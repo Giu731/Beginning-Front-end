@@ -1,0 +1,28 @@
+{% extends "layout.njk" %}
+
+{% block head %}
+    <title>Sobre - Rocketseat</title>
+{% endblock %}
+
+
+{% block content %}
+        <div id="wrapper">
+            <div id="logo">
+                <img src="{{about.logo}}"
+            alt="logo {{about.title}}" >
+            </div>
+            <h1>{{about.title}}</h1>
+            <h2>{{about.role}}</h2>
+            <p>{{about.description}}</p>
+            <div class="lista">
+                <p>Principais tecnologias utilizadas:</p>
+            <ul>
+            {% for tech in about.techs%}
+                <li>{{tech.name}}</li>
+            {% endfor %} 
+            </ul>
+            </div>
+
+        </div>
+
+{% endblock %}

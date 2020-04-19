@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="icon" href="favicon.ico" type="image/x-icon">
+        <link rel="stylesheet" href="/styleswebsite.css">
+        {% block head %}
+        <title>Rocketseat</title>
+        {% endblock %}
+
+    </head>
+
+    <body>
+        <header>
+            <div class="links">
+                <a href="/description" alt="sobre a empresa">Sobre</a>
+                <a href="/" alt="conteúdos dados">Conteúdos</a>
+                <a href="https://discordapp.com/invite/gCRAFhc" alt="link para discord" target="_blank">Comunidade</a>
+                <a href="mailto:oi@rocketseat.com.br" alt="link para email" target="_blank">Email</a>
+                <a href="tel:s+5547992078767" alt="link para telefone" target="_blank">Telefone</a>
+            </div>
+        </header>
+
+        {% block content %}{% endblock %}
+
+        <div class="links" id="links-footer">
+        {% for link in about.links %}
+            <a href="{{link.url}}" target="_blank">{{link.name}}</a>
+        {% endfor %}
+
+        </div>
+
+        
+    </body>
+</html>

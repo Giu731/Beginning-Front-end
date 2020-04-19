@@ -1,0 +1,32 @@
+{% extends "layout.njk" %}
+
+{% block head %}
+    <title>{{item.title}} -  Rocketseat</title>
+{% endblock %}
+
+
+{% block content %}       
+            <div id="wrapper">
+                <h1>{{item.title}}</h1>
+            </div>
+       
+
+        <section class="coursespage">
+        
+            <div class="course" id="{{item.id}}">
+                <div class="course-logo">
+                    <img src="{{item.logo}}"
+                    alt="logo {{item.id}}">
+                </div>
+
+                <div class="course-info">
+                    <p>{{item.modules}}</p>
+                    <p class="cost-info">{{item.price}}</p>
+                </div>
+            </div>
+
+        </section>
+
+
+
+{% endblock %}
