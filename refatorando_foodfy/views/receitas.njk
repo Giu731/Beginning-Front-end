@@ -1,0 +1,70 @@
+{% extends "layout.njk" %}
+
+{% block head %}
+    <title>Receitas - Foodfy</title>
+    <link rel="stylesheet" href="/stylefoodfy.css">
+{% endblock head %}
+{% block nav %}
+<nav class="links">
+    <a href="/sobre" alt="about">Sobre</a>
+    <a href="/receitas" alt="recipes"><strong>Receitas</strong></a>
+</nav>
+{% endblock nav %}
+
+{% block content %}
+        <main>
+            <section class="receitas">
+            {% for item in items %}
+                <div class="receita" id="{{item.id}}">
+                    <div class="fotoReceita">
+                        <img src="{{item.image}}" alt="imagem ilustrativa da receita: {{item.title}}">
+                    </div>
+                    <div class="nomeReceita">
+                        <h3>{{item.title}}</h3>
+                    </div>
+                    <div class="criadorReceita">
+                        <p>por {{item.author}}</p>
+                    </div>
+                </div>
+            {% endfor %}
+            {% for item in items %}
+                <div class="receita" id="{{item.id}}">
+                    <div class="fotoReceita">
+                        <img src="{{item.image}}" alt="imagem ilustrativa da receita: {{item.title}}">
+                    </div>
+                    <div class="nomeReceita">
+                        <h3>{{item.title}}</h3>
+                    </div>
+                    <div class="criadorReceita">
+                        <p>por {{item.author}}</p>
+                    </div>
+                </div>
+            {% endfor %}
+          
+            </section>
+
+            <div class="modal-overlay">
+                <div class = "modal">
+                    <div class="modal-content">
+                        <img src="" alt="imagem da receita">
+                        <div class = "modal-info">
+                            <div class = "nomeReceitaModal">
+                                <h3>asinhas de frango ao barbecue</h3>
+                            </div>
+                            <div class ="criadorReceitaModal">
+                                <p>por Vani Steroski</p>
+                            </div>
+                        </div>
+                    </div>
+                    <a class="close-modal">
+                        <p>Fechar modal</p>
+                    </a>
+                </div>
+            </div>
+        </main>
+{% endblock content %}
+
+
+{% block foot %}     
+        <script src="scriptsreceita.js"></script>
+{% endblock foot %}   

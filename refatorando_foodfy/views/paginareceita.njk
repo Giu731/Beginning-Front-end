@@ -1,0 +1,60 @@
+{% extends "layout.njk" %}
+
+{% block head %}
+    <title>{{item.title}} - Foodfy</title>
+    <link rel="stylesheet" href="/stylefoodfy.css">
+{% endblock head %}
+
+{% block nav %}
+<nav class="links">
+    <a href="/sobre" alt="about">Sobre</a>
+    <a href="/receitas" alt="recipes"><strong>Receitas</strong></a>
+</nav>
+{% endblock nav %}
+
+{% block content %}
+    <main>
+        <section class="recipesPage">
+            <img src="{{item.image}}" alt = "imagem ilustrativa da receita: {{item.title}}">
+            <div class="cooker-info">
+                <div class="title">
+                    <h1>{{item.title}}</h3>
+                </div>
+                <div class="author">
+                    <h2>{{item.author}}</h2>
+                </div>        
+            </div>
+            <div class="recipes-info">
+                <div class="ingredients">
+                    <h3>Ingredientes</h3>
+                    <ul class="ingredients-list">
+                        {% for ingredient in item.ingredients %}
+                            <li>{{ingredient}}</li>
+                        {% endfor %}
+                    </ul>
+                </div>
+                <div class="steps">
+                    <h3>Preparo</h3>
+                    <ul class="preparation-steps">
+                        {% for step in item.steps %}
+                            <li>{{step}}</li>
+                        {% endfor %}
+                    </ul>
+                </div>
+                <div class="information">
+                    {% if item.information %}
+                         <h3>Informações</h3>
+                        <p>{{item.information}}</p>
+                    {% endif %}
+                </div>
+            </div>
+        </section>
+
+            
+        </main>
+{% endblock content %}
+
+
+{% block foot %}     
+        <script src="/scriptsreceita.js"></script>
+{% endblock foot %}   
